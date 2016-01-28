@@ -2,6 +2,7 @@
 #include <fstream>
 #include <complex>
 #include <sstream>
+#include <cmath>
 //-----------------------------------
 using namespace std;
 //-----------------------------------
@@ -18,18 +19,19 @@ void writeToFile(const cmplx* const v, const string s, const double dx,
 //-----------------------------------
 int main(){
 
-	const int Nx = ;
-	const double xmin = ;
-  const double xmax = ;
-	const double Tend = ;
-	const double dx = ;
-	const double dt =   ;
+	const int Nx = 300;
+	const double xmin = -40.;
+  const double xmax = 40.;
+	const double Tend = 10.*M_PI;
+	const double dx = (xmax-xmin)/Nx;
+	const double dt = dx;
   double t = 0;
 	const int Na = 10;
 	int Nk = int(Tend / Na / dt + 0.5);
 
 	const double lambda = 10;
   const double omega = 0.2;
+  const double alpha = -dt/(4.*dx*dx);
 
   stringstream strm;
 
@@ -43,6 +45,11 @@ int main(){
 
 	for (int i = 1; i <= Na; i++) {
 		for (int j = 1; j <= Nk-1; j++) {
+
+			//steps here
+			
+
+
 
          t+=dt;
 		}
